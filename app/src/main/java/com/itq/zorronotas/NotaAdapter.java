@@ -8,8 +8,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Adaptador que enlaza la lista de notas con las tarjetas CardView en el RecyclerView.
@@ -56,6 +59,15 @@ public class NotaAdapter extends RecyclerView.Adapter<NotaAdapter.NotaViewHolder
         holder.tvContenido.setText(notaActual.getContenido());
         holder.tvFecha.setText(notaActual.getFechaCreacion());
 
+        if (notaActual.getFechaRecordatorio() != null && notaActual.getFechaRecordatorio() > System.currentTimeMillis()) {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+            String recordatorioTexto = "⏰ " + sdf.format(new Date(notaActual.getFechaRecordatorio()));
+            holder.tvRecordatorio.setText(recordatorioTexto);
+            holder.tvRecordatorio.setVisibility(View.VISIBLE);
+        } else {
+            holder.tvRecordatorio.setVisibility(View.GONE);
+        }
+
         holder.itemView.setOnClickListener(v -> {
             if (clickListener != null) {
                 clickListener.onNotaClick(notaActual);
@@ -80,12 +92,14 @@ public class NotaAdapter extends RecyclerView.Adapter<NotaAdapter.NotaViewHolder
         private final TextView tvTitulo;
         private final TextView tvContenido;
         private final TextView tvFecha;
+        private final TextView tvRecordatorio;
 
         public NotaViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitulo = itemView.findViewById(R.id.tvItemTitulo);
             tvContenido = itemView.findViewById(R.id.tvItemContenido);
             tvFecha = itemView.findViewById(R.id.tvItemFecha);
+            tvRecordatorio = itemView.findViewById(R.id.tvItemRecordatorio);
         }
     }
 }

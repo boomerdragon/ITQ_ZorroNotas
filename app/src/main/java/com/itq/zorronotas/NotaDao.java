@@ -17,7 +17,7 @@ public interface NotaDao {
 
     // Inserción de una nueva nota
     @Insert
-    void insertar(NotaEntity nota);
+    long insertar(NotaEntity nota);
 
     // Actualización de una nota existente
     @Update

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,6 +20,7 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.App.Starting"
+            android:launchMode="singleTop"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +35,11 @@
             android:theme="@style/Theme.ZorroNotas"
             android:windowSoftInputMode="adjustResize"
             android:parentActivityName=".MainActivity" />
+
+        <!-- Receiver de Recordatorios -->
+        <receiver
+            android:name=".ReminderReceiver"
+            android:exported="false" />
 
     </application>
 

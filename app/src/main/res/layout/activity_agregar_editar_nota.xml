@@ -67,6 +67,36 @@
                 android:textColorHint="@color/text_hint"
                 android:textSize="16sp" />
 
+            <!-- Sección de Recordatorio -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/card_bg_note"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <CheckBox
+                    android:id="@+id/cbRecordatorio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cb_establecer_recordatorio"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvFechaHoraRecordatorio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textColor="@color/text_source_cyan"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
             <Button
                 android:id="@+id/btnGuardarNota"
                 android:layout_width="match_parent"

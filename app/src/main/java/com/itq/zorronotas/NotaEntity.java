@@ -17,16 +17,26 @@ public class NotaEntity {
     private String titulo;
     private String contenido;
     private String fechaCreacion;
+    private Long fechaRecordatorio;
 
     // Constructor vacío requerido por Room
     public NotaEntity() {
     }
 
-    // Constructor completo
+    // Constructor completo sin recordatorio
     public NotaEntity(String titulo, String contenido, String fechaCreacion) {
         this.titulo = titulo;
         this.contenido = contenido;
         this.fechaCreacion = fechaCreacion;
+        this.fechaRecordatorio = null;
+    }
+
+    // Constructor completo con recordatorio
+    public NotaEntity(String titulo, String contenido, String fechaCreacion, Long fechaRecordatorio) {
+        this.titulo = titulo;
+        this.contenido = contenido;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaRecordatorio = fechaRecordatorio;
     }
 
     // Getters y Setters
@@ -60,5 +70,13 @@ public class NotaEntity {
 
     public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public Long getFechaRecordatorio() {
+        return fechaRecordatorio;
+    }
+
+    public void setFechaRecordatorio(Long fechaRecordatorio) {
+        this.fechaRecordatorio = fechaRecordatorio;
     }
 }

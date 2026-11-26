@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 /**
  * Base de datos Room en patrón Singleton para evitar la apertura repetida de conexiones SQLite.
  */
-@Database(entities = {NotaEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {NotaEntity.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static volatile AppDatabase INSTANCIA;

@@ -17,4 +17,8 @@
     <string name="item_placeholder_titulo">Título de la Nota</string>
     <string name="item_placeholder_contenido">Contenido detallado de la nota rápida…</string>
     <string name="item_placeholder_fecha">26/11/2026 10:00</string>
+
+    <!-- Reminder Strings -->
+    <string name="cb_establecer_recordatorio">Establecer recordatorio</string>
+    <string name="tv_seleccionar_fecha_hora">Toca para seleccionar fecha y hora</string>
 </resources>
