@@ -2,10 +2,11 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardBackgroundColor="#002B55"
+    app:cardBackgroundColor="@color/card_bg_note"
     app:cardCornerRadius="12dp"
     app:cardElevation="6dp">
 
@@ -19,8 +20,8 @@
             android:id="@+id/tvItemTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Título de la Nota"
-            android:textColor="#FFD700"
+            tools:text="@string/item_placeholder_titulo"
+            android:textColor="@color/text_title_gold"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -31,8 +32,8 @@
             android:layout_marginTop="6dp"
             android:ellipsize="end"
             android:maxLines="3"
-            android:text="Contenido detallado de la nota rápida..."
-            android:textColor="#FFFFFF"
+            tools:text="@string/item_placeholder_contenido"
+            android:textColor="@color/white"
             android:textSize="14sp" />
 
         <TextView
@@ -41,8 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="8dp"
-            android:text="26/11/2026 10:00"
-            android:textColor="#00E5FF"
+            tools:text="@string/item_placeholder_fecha"
+            android:textColor="@color/text_source_cyan"
             android:textSize="12sp"
             android:textStyle="italic" />
 

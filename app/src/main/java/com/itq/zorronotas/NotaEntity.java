@@ -18,6 +18,10 @@ public class NotaEntity {
     private String contenido;
     private String fechaCreacion;
 
+    // Constructor vacío requerido por Room
+    public NotaEntity() {
+    }
+
     // Constructor completo
     public NotaEntity(String titulo, String contenido, String fechaCreacion) {
         this.titulo = titulo;

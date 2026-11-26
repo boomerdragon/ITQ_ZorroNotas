@@ -6,4 +6,14 @@
     </style>
 
     <style name="Theme.ZorroNotas" parent="Base.Theme.ZorroNotas" />
+
+    <style name="Theme.ITQNoticiasApp" parent="Base.Theme.ZorroNotas" />
+
+<!-- Theme for Splash Screen -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/bg_main</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.ZorroNotas</item>
+        <item name="android:windowSplashScreenBrandingImage" tools:targetApi="31">@drawable/poweredby</item>
+    </style>
 </resources>

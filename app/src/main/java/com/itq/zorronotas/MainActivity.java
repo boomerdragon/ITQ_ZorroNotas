@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.splashscreen.SplashScreen;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
@@ -24,8 +26,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
+        long startTime = System.currentTimeMillis();
+        long minSplashDurationMs = 1500; // Mantiene el Splash Screen al menos 1.5 segundos
+        long maxSplashTimeoutMs = 3000;  // Tiempo límite de seguridad
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MaterialToolbar toolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(toolbar);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerViewNotas);
         notaAdapter = new NotaAdapter();
@@ -36,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
         notasViewModel.getTodasLasNotas().observe(this, notas -> {
             notaAdapter.setNotas(notas);
         });
+
+        // Mantiene visible el Splash Screen durante la duración deseada o mientras cargan las noticias
+        splashScreen.setKeepOnScreenCondition(() -> {
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            if (elapsedTime >= maxSplashTimeoutMs) {
+                return false;
+            }
+            boolean isMinTimePassed = elapsedTime >= minSplashDurationMs;
+            boolean isDataLoaded = notasViewModel.getTodasLasNotas().getValue() != null;
+            return !(isMinTimePassed && isDataLoaded);
+        });
+
 
         // Botón Flotante para agregar nota
         FloatingActionButton fab = findViewById(R.id.fabAgregarNota);

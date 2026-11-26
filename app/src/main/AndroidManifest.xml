@@ -10,12 +10,13 @@
         android:label="Notas Rápidas"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+        android:theme="@style/Theme.ZorroNotas"
         tools:ignore="GoogleAppIndexingWarning">
 
         <!-- Activity Principal: Lista de Notas -->
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.App.Starting"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +28,7 @@
         <activity
             android:name=".AgregarEditarNotaActivity"
             android:exported="false"
+            android:theme="@style/Theme.ZorroNotas"
             android:windowSoftInputMode="adjustResize"
             android:parentActivityName=".MainActivity" />
 

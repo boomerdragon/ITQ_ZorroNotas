@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">ZorroNotas</string>
+    <!-- General App Strings -->
+    <string name="app_name">Notas Rápidas</string>
+    <string name="cd_app_icon">Icono de la app</string>
+
+    <!-- Main Screen -->
+    <string name="app_title">Notas Rápidas</string>
+    <string name="cd_add_note">Agregar Nota</string>
+
+    <!-- Add/Edit Note Screen -->
+    <string name="title_nota">Nota</string>
+    <string name="hint_titulo_nota">Título de la Nota</string>
+    <string name="hint_contenido_nota">Escribe tus notas aquí…</string>
+    <string name="btn_guardar_nota">Guardar Nota</string>
+
+    <!-- Note Item Placeholders -->
+    <string name="item_placeholder_titulo">Título de la Nota</string>
+    <string name="item_placeholder_contenido">Contenido detallado de la nota rápida…</string>
+    <string name="item_placeholder_fecha">26/11/2026 10:00</string>
 </resources>

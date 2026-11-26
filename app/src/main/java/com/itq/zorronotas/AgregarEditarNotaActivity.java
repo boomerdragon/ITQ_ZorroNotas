@@ -34,18 +34,22 @@ public class AgregarEditarNotaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_editar_nota);
 
+        com.google.android.material.appbar.MaterialToolbar toolbar = findViewById(R.id.editToolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(v -> finish());
+
         etTitulo = findViewById(R.id.etTituloNota);
         etContenido = findViewById(R.id.etContenidoNota);
         Button btnGuardar = findViewById(R.id.btnGuardarNota);
 
         Intent intent = getIntent();
-        if (intent.hasExtra(EXTRA_ID)) {
-            setTitle("Editar Nota");
+        if (intent != null && intent.hasExtra(EXTRA_ID)) {
+            toolbar.setTitle("Editar Nota");
             idNota = intent.getIntExtra(EXTRA_ID, -1);
             etTitulo.setText(intent.getStringExtra(EXTRA_TITULO));
             etContenido.setText(intent.getStringExtra(EXTRA_CONTENIDO));
         } else {
-            setTitle("Nueva Nota");
+            toolbar.setTitle("Nueva Nota");
         }
 
         btnGuardar.setOnClickListener(v -> guardarNota());
