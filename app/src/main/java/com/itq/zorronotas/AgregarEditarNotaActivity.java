@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.itq.zorronotas.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;

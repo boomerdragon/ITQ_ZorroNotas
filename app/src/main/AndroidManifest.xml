@@ -27,6 +27,7 @@
         <activity
             android:name=".AgregarEditarNotaActivity"
             android:exported="false"
+            android:windowSoftInputMode="adjustResize"
             android:parentActivityName=".MainActivity" />
 
     </application>
