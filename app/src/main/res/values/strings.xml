@@ -1,10 +1,10 @@
 <resources>
     <!-- General App Strings -->
-    <string name="app_name">Notas Rápidas</string>
+    <string name="app_name">QuickFox Notes</string>
     <string name="cd_app_icon">Icono de la app</string>
 
     <!-- Main Screen -->
-    <string name="app_title">Notas Rápidas</string>
+    <string name="app_title">QuickFox Notes</string>
     <string name="cd_add_note">Agregar Nota</string>
 
     <!-- Add/Edit Note Screen -->
